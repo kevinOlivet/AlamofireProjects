@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Rkw-MO-Qm7">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13174"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="YAF-JM-s6m">
+            <objects>
+                <viewController id="Rkw-MO-Qm7" customClass="ViewController" customModule="AlamoVsSession" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="F0c-gb-2Ub"/>
+                        <viewControllerLayoutGuide type="bottom" id="Hcs-Mk-6Pn"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="wxQ-rE-2N7">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="Rbx-P9-gZM">
+                                <rect key="frame" x="136" y="276" width="102" height="114"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QUu-Vy-Y4o">
+                                        <rect key="frame" x="0.0" y="0.0" width="102" height="30"/>
+                                        <state key="normal" title="Session Get"/>
+                                        <connections>
+                                            <action selector="doApiCall:" destination="Rkw-MO-Qm7" eventType="touchUpInside" id="qyQ-n4-GMa"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Uhl-Lv-V2y">
+                                        <rect key="frame" x="0.0" y="42" width="102" height="30"/>
+                                        <state key="normal" title="Session Post"/>
+                                        <connections>
+                                            <action selector="postButtonTapped:" destination="Rkw-MO-Qm7" eventType="touchUpInside" id="HjZ-3Q-biY"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vjY-5Q-t1V">
+                                        <rect key="frame" x="0.0" y="84" width="102" height="30"/>
+                                        <state key="normal" title="Session Delete"/>
+                                        <connections>
+                                            <action selector="deleteButtonTapped:" destination="Rkw-MO-Qm7" eventType="touchUpInside" id="WZA-sI-pDG"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Cx6-Yg-tn2">
+                                <rect key="frame" x="141" y="28" width="92" height="110"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DqZ-NU-CH8">
+                                        <rect key="frame" x="0.0" y="0.0" width="92" height="30"/>
+                                        <state key="normal" title="Alamo Get"/>
+                                        <connections>
+                                            <action selector="alamoGetTapped:" destination="Rkw-MO-Qm7" eventType="touchUpInside" id="OJO-bd-xSs"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VTi-8y-MyK">
+                                        <rect key="frame" x="0.0" y="40" width="92" height="30"/>
+                                        <state key="normal" title="Alamo Post"/>
+                                        <connections>
+                                            <action selector="alamoPostTapped:" destination="Rkw-MO-Qm7" eventType="touchUpInside" id="CbW-XW-WwW"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZVi-Ev-IID">
+                                        <rect key="frame" x="0.0" y="80" width="92" height="30"/>
+                                        <state key="normal" title="Alamo Delete"/>
+                                        <connections>
+                                            <action selector="alamoDeleteTapped:" destination="Rkw-MO-Qm7" eventType="touchUpInside" id="307-L4-jNg"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="Rbx-P9-gZM" firstAttribute="centerX" secondItem="wxQ-rE-2N7" secondAttribute="centerX" id="a8B-fS-9XT"/>
+                            <constraint firstItem="Rbx-P9-gZM" firstAttribute="centerY" secondItem="wxQ-rE-2N7" secondAttribute="centerY" id="bx4-FR-U2e"/>
+                            <constraint firstItem="Cx6-Yg-tn2" firstAttribute="top" secondItem="F0c-gb-2Ub" secondAttribute="bottom" constant="8" symbolic="YES" id="lWm-0N-GUl"/>
+                            <constraint firstItem="Cx6-Yg-tn2" firstAttribute="centerX" secondItem="Rbx-P9-gZM" secondAttribute="centerX" id="zTT-B4-xie"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="OcO-rf-fva"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wQ2-u3-5NB" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
+    </scenes>
+</document>

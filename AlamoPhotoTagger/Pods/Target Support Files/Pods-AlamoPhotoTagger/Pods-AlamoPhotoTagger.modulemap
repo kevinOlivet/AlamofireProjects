@@ -1,0 +1,6 @@
+framework module Pods_AlamoPhotoTagger {
+  umbrella header "Pods-AlamoPhotoTagger-umbrella.h"
+
+  export *
+  module * { export * }
+}

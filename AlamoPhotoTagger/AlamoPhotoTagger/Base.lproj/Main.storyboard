@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="lUJ-aU-jaW">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13174"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Photo Tagger-->
+        <scene sceneID="zb7-Lq-1Gr">
+            <objects>
+                <viewController id="gxu-fP-aNV" customClass="ViewController" customModule="AlamoPhotoTagger" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="oUx-3s-kGS"/>
+                        <viewControllerLayoutGuide type="bottom" id="zqq-p8-6fS"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="ScZ-FE-C26">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="xgi-IN-tvV">
+                                <rect key="frame" x="-4" y="64" width="383" height="603"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XpR-S2-T4w">
+                                <rect key="frame" x="135" y="314" width="105" height="39"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <state key="normal" title="Take Photo"/>
+                                <connections>
+                                    <action selector="takePicture:" destination="gxu-fP-aNV" eventType="touchUpInside" id="Ueg-YN-Miz"/>
+                                </connections>
+                            </button>
+                            <progressView hidden="YES" opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="pis-xf-qEA">
+                                <rect key="frame" x="16" y="565" width="343" height="2"/>
+                            </progressView>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="HsB-po-hlr">
+                                <rect key="frame" x="169" y="466" width="37" height="37"/>
+                                <color key="color" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </activityIndicatorView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="XpR-S2-T4w" firstAttribute="centerY" secondItem="ScZ-FE-C26" secondAttribute="centerY" id="0VA-mn-sB0"/>
+                            <constraint firstItem="zqq-p8-6fS" firstAttribute="top" secondItem="xgi-IN-tvV" secondAttribute="bottom" id="CXo-Bj-3zq"/>
+                            <constraint firstItem="zqq-p8-6fS" firstAttribute="top" secondItem="pis-xf-qEA" secondAttribute="bottom" constant="100" id="Kv8-ET-M0W"/>
+                            <constraint firstItem="pis-xf-qEA" firstAttribute="top" secondItem="HsB-po-hlr" secondAttribute="bottom" constant="62" id="Ny0-lx-Ji0"/>
+                            <constraint firstItem="HsB-po-hlr" firstAttribute="centerX" secondItem="ScZ-FE-C26" secondAttribute="centerX" id="Qpy-ji-LNK"/>
+                            <constraint firstItem="xgi-IN-tvV" firstAttribute="top" secondItem="oUx-3s-kGS" secondAttribute="bottom" id="cwZ-FB-SJS"/>
+                            <constraint firstItem="xgi-IN-tvV" firstAttribute="leading" secondItem="ScZ-FE-C26" secondAttribute="leadingMargin" constant="-20" id="e0b-Xl-INz"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="xgi-IN-tvV" secondAttribute="trailing" constant="-20" id="jDV-Sr-d5G"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="pis-xf-qEA" secondAttribute="trailing" id="luB-Q0-8fF"/>
+                            <constraint firstItem="XpR-S2-T4w" firstAttribute="centerX" secondItem="ScZ-FE-C26" secondAttribute="centerX" id="uD4-H2-2Kw"/>
+                            <constraint firstItem="pis-xf-qEA" firstAttribute="leading" secondItem="ScZ-FE-C26" secondAttribute="leadingMargin" id="zRB-yV-DG4"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="WHv-Dw-yZ0"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Photo Tagger" id="tgn-bd-r6J">
+                        <barButtonItem key="backBarButtonItem" title="Back" id="9AI-0t-oZK"/>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="activityIndicatorView" destination="HsB-po-hlr" id="MGV-JN-6D8"/>
+                        <outlet property="imageView" destination="xgi-IN-tvV" id="z1Q-Hq-1U3"/>
+                        <outlet property="progressView" destination="pis-xf-qEA" id="Q4v-iQ-xHo"/>
+                        <outlet property="takePictureButton" destination="XpR-S2-T4w" id="Mjj-Ec-R2O"/>
+                        <segue destination="FRZ-EA-Qgn" kind="show" identifier="ShowResults" id="5e1-hz-iBK">
+                            <nil key="action"/>
+                        </segue>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pZ3-XU-62r" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="320" y="428"/>
+        </scene>
+        <!--Results-->
+        <scene sceneID="hoz-DY-K2f">
+            <objects>
+                <viewController id="FRZ-EA-Qgn" customClass="TagsColorsViewController" customModule="AlamoPhotoTagger" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="7dp-r1-Z4n"/>
+                        <viewControllerLayoutGuide type="bottom" id="BB7-RR-29n"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="y9Y-6x-lHz">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="VoD-Wc-0uQ">
+                                <rect key="frame" x="16" y="72" width="343" height="29"/>
+                                <segments>
+                                    <segment title="Tags"/>
+                                    <segment title="Colors"/>
+                                </segments>
+                                <connections>
+                                    <action selector="tagsColorsSegmentedControlChanged:" destination="FRZ-EA-Qgn" eventType="valueChanged" id="iDS-l9-kon"/>
+                                </connections>
+                            </segmentedControl>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="voO-SG-G58">
+                                <rect key="frame" x="0.0" y="108" width="375" height="559"/>
+                                <connections>
+                                    <segue destination="SDs-Oa-Mde" kind="embed" identifier="DataTable" id="RYM-Ox-O4O"/>
+                                </connections>
+                            </containerView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="voO-SG-G58" firstAttribute="trailing" secondItem="y9Y-6x-lHz" secondAttribute="trailingMargin" id="4Ts-VQ-WwJ"/>
+                            <constraint firstAttribute="trailing" secondItem="voO-SG-G58" secondAttribute="trailing" id="CuF-L8-HvZ"/>
+                            <constraint firstItem="voO-SG-G58" firstAttribute="top" secondItem="VoD-Wc-0uQ" secondAttribute="bottom" constant="8" id="EVq-Et-Hc5"/>
+                            <constraint firstItem="VoD-Wc-0uQ" firstAttribute="trailing" secondItem="y9Y-6x-lHz" secondAttribute="trailingMargin" id="SqH-oL-egT"/>
+                            <constraint firstItem="BB7-RR-29n" firstAttribute="top" secondItem="voO-SG-G58" secondAttribute="bottom" id="bii-cT-qSq"/>
+                            <constraint firstItem="voO-SG-G58" firstAttribute="leading" secondItem="y9Y-6x-lHz" secondAttribute="leading" id="jqg-PI-acu"/>
+                            <constraint firstItem="VoD-Wc-0uQ" firstAttribute="top" secondItem="7dp-r1-Z4n" secondAttribute="bottom" constant="8" id="myX-v9-3qt"/>
+                            <constraint firstItem="VoD-Wc-0uQ" firstAttribute="leading" secondItem="y9Y-6x-lHz" secondAttribute="leadingMargin" id="nCB-nE-bnS"/>
+                            <constraint firstItem="voO-SG-G58" firstAttribute="leading" secondItem="y9Y-6x-lHz" secondAttribute="leadingMargin" id="yyz-A6-DOm"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="ecs-N5-k4i"/>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="4Ts-VQ-WwJ"/>
+                                <exclude reference="yyz-A6-DOm"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <navigationItem key="navigationItem" title="Results" id="j31-Iz-ECS"/>
+                    <connections>
+                        <outlet property="segmentedControl" destination="VoD-Wc-0uQ" id="0ce-gE-g81"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="OLd-9p-ioe" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="993" y="428"/>
+        </scene>
+        <!--Tags Colors Table View Controller-->
+        <scene sceneID="9Rr-8A-iYC">
+            <objects>
+                <tableViewController id="SDs-Oa-Mde" customClass="TagsColorsTableViewController" customModule="AlamoPhotoTagger" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="afJ-si-y23">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="559"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="TagOrColorCell" textLabel="Oh5-3f-bHY" style="IBUITableViewCellStyleDefault" id="xm9-Cf-mWq">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="xm9-Cf-mWq" id="Xuk-6T-iCU">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Tag Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Oh5-3f-bHY">
+                                            <rect key="frame" x="16" y="0.0" width="344" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="SDs-Oa-Mde" id="dbr-QF-VAs"/>
+                            <outlet property="delegate" destination="SDs-Oa-Mde" id="Z6r-IC-HOf"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="C6M-vb-IOK" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1737" y="429"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="cQB-es-aDq">
+            <objects>
+                <navigationController id="lUJ-aU-jaW" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="oz0-Cs-4RS">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="gxu-fP-aNV" kind="relationship" relationship="rootViewController" id="BQZ-Wd-hZv"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="D8t-zb-wta" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-469" y="429"/>
+        </scene>
+    </scenes>
+</document>

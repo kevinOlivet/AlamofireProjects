@@ -1,4 +1,4 @@
-AlamoVsSession
+#AlamoVsSession
 
 This project explores the differences between using Alamofire and URLSession.
 
